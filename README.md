@@ -10,13 +10,31 @@
 [![Gemini AI](https://img.shields.io/badge/Gemini%20AI-Powered-4285F4.svg?logo=google)](https://ai.google.dev/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-[🚀 **Live Demo**](#) • [📖 **Documentation**](ABOUT_THE_PROJECT.md) • [🎮 **Try It Now**](#quick-start) • [🤝 **Contribute**](#contributing)
+[🚀 **Live Demo**](https://stemverse-a-cosmic-learning-adventure.vercel.app/) • [📖 **Documentation**](ABOUT_THE_PROJECT.md) • [🎮 **Try It Now**](#quick-start) • [🤝 **Contribute**](#contributing)
 
 ---
 
 *Transform STEM education into an epic cosmic adventure where students explore alien worlds, solve intergalactic puzzles, and unlock the mysteries of the universe through AI-powered learning experiences.*
 
 </div>
+
+---
+
+<div align="center">
+
+## 🌟 **LIVE DEPLOYMENT** 🌟
+
+### 🚀 **Experience STEMverse Now!** 
+
+[![Deploy Status](https://img.shields.io/badge/🌐%20LIVE%20DEMO-Click%20Here!-00C851?style=for-the-badge&logo=vercel)](https://stemverse-a-cosmic-learning-adventure.vercel.app/)
+
+**🔗 Direct Link:** [`https://stemverse-a-cosmic-learning-adventure.vercel.app/`](https://stemverse-a-cosmic-learning-adventure.vercel.app/)
+
+*🎮 No installation needed - Jump straight into your cosmic learning adventure!*
+
+</div>
+
+---
 
 ## ✨ What Makes STEMverse Special?
 
@@ -89,13 +107,17 @@ cp .env.example .env.local
 Create a `.env.local` file in the root directory:
 
 ```bash
-# Required: Google Gemini API Key
-VITE_GEMINI_API_KEY=your_gemini_api_key_here
+# Required: Google Gemini API Keys (use the same API key for all three)
+GEMINI_API_KEY=AIzaSyCwg1omBoK9kSWwmjJ3BWFb0CO7oEAAJVU
+VITE_GOOGLE_API_KEY=AIzaSyCwg1omBoK9kSWwmjJ3BWFb0CO7oEAAJVU
+VITE_GEMINI_API_KEY=AIzaSyCwg1omBoK9kSWwmjJ3BWFb0CO7oEAAJVU
 
 # Optional: Analytics and monitoring
 VITE_ANALYTICS_ID=your_analytics_id
 VITE_SENTRY_DSN=your_sentry_dsn
 ```
+
+> **⚠️ Important**: Replace the API key above with your own Gemini API key. The project requires all three environment variables for different components to function properly.
 
 ### Launch STEMverse
 
@@ -338,7 +360,7 @@ STEMverse wouldn't be possible without:
 
 ### 🚀 Ready to Explore the Cosmos of Learning?
 
-**[Start Your Adventure Now →](https://stemverse.edu)**
+**[Start Your Adventure Now →](https://stemverse-a-cosmic-learning-adventure.vercel.app/)**
 
 *STEMverse is more than a learning platform—it's a launchpad for the next generation of scientists, engineers, mathematicians, and innovators. Join us in making education as exciting as the discoveries it enables!*
 
