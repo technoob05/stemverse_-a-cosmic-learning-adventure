@@ -1,0 +1,148 @@
+.voice-visualizer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  height: 100%;
+}
+
+.visualizer-container {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.audio-bars {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 3px;
+  height: 80px;
+  margin-bottom: 1rem;
+}
+
+.audio-bar {
+  width: 8px;
+  min-height: 4px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  transition: all 0.1s ease;
+}
+
+.voice-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.record-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #4f46e5, #06b6d4);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+  min-width: 120px;
+  min-height: 120px;
+}
+
+.record-button:hover:not(:disabled) {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(79, 70, 229, 0.4);
+}
+
+.record-button.recording {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  animation: pulse 1s infinite;
+}
+
+.record-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.record-icon {
+  font-size: 2rem;
+}
+
+.record-text {
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-align: center;
+  max-width: 80px;
+}
+
+.volume-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 200px;
+}
+
+.volume-label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.volume-bar {
+  flex: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.volume-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+  border-radius: 3px;
+}
+
+.voice-tips {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.voice-tips h4 {
+  margin: 0 0 1rem 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+}
+
+.voice-tips ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  list-style: none;
+}
+
+.voice-tips li {
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  position: relative;
+}
+
+.voice-tips li::before {
+  content: "✨";
+  position: absolute;
+  left: -1.2rem;
+  font-size: 0.8rem;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}

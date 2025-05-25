@@ -1,0 +1,206 @@
+.learning-dashboard {
+  padding: 1.5rem;
+  height: 100%;
+  overflow-y: auto;
+  color: white;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.dashboard-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.close-button {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.close-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-icon {
+  font-size: 2rem;
+}
+
+.stat-content {
+  flex: 1;
+}
+
+.stat-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.interaction-breakdown {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.interaction-breakdown h4 {
+  margin: 0 0 1rem 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+}
+
+.interaction-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.interaction-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+.interaction-icon {
+  font-size: 1.2rem;
+  width: 24px;
+  text-align: center;
+}
+
+.interaction-label {
+  flex: 1;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+}
+
+.interaction-count {
+  background: linear-gradient(135deg, #4f46e5, #06b6d4);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.learning-insights {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.learning-insights h4 {
+  margin: 0 0 1rem 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+}
+
+.insights-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.insight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.insight-bullet {
+  font-size: 0.9rem;
+  margin-top: 0.1rem;
+}
+
+.insight-text {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.progress-section {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.progress-section h4 {
+  margin: 0 0 1rem 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+}
+
+.progress-bar {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  height: 8px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4f46e5, #06b6d4);
+  border-radius: 8px;
+  transition: width 0.5s ease;
+}
+
+.progress-text {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .interaction-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+}

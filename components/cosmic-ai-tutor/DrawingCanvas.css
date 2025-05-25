@@ -1,0 +1,189 @@
+.drawing-canvas-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  height: 100%;
+  padding: 1rem;
+}
+
+.canvas-header {
+  text-align: center;
+}
+
+.canvas-header h3 {
+  margin: 0 0 0.5rem 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.2rem;
+}
+
+.canvas-header p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+.canvas-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  align-items: center;
+}
+
+.tool-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tool-group label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+.tool-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tool-button {
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.8rem;
+}
+
+.tool-button:hover, .tool-button.active {
+  background: rgba(79, 70, 229, 0.3);
+  border-color: #4f46e5;
+  color: white;
+}
+
+.size-slider {
+  width: 80px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+
+.size-indicator {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  min-width: 35px;
+}
+
+.color-palette {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.color-button {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.color-button:hover, .color-button.active {
+  border-color: #4f46e5;
+  transform: scale(1.1);
+}
+
+.canvas-wrapper {
+  display: flex;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.drawing-canvas {
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  cursor: crosshair;
+  max-width: 100%;
+  height: auto;
+}
+
+.canvas-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.action-button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.clear-button {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+}
+
+.submit-button {
+  background: linear-gradient(135deg, #4f46e5, #06b6d4);
+  color: white;
+}
+
+.drawing-tips {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.drawing-tips h4 {
+  margin: 0 0 0.5rem 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+}
+
+.drawing-tips ul {
+  margin: 0;
+  padding-left: 1rem;
+  list-style: none;
+}
+
+.drawing-tips li {
+  margin-bottom: 0.25rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8rem;
+  position: relative;
+}
+
+.drawing-tips li::before {
+  content: "✨";
+  position: absolute;
+  left: -1rem;
+  font-size: 0.7rem;
+}
+
+@media (max-width: 768px) {
+  .canvas-tools {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .tool-group {
+    justify-content: space-between;
+  }
+}

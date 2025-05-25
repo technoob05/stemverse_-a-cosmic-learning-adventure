@@ -1,0 +1,9 @@
+{
+  "name": "STEMverse: A Cosmic Learning Adventure",
+  "description": "STEMverse is an interactive web application where users explore different planets, each dedicated to a STEM field (Math, Ecology, Coding). Users solve challenges, learn concepts with AI assistance from Gemini, and earn rewards in a gamified space exploration journey.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "prompt": ""
+}

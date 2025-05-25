@@ -1,0 +1,52 @@
+.audioPulse {
+  display: flex;
+  width: 24px;
+  height: 24px; /* Explicit height for container */
+  justify-content: space-evenly;
+  align-items: center;
+  transition: all 0.5s;
+  opacity: 0.7; /* Default opacity, active will make it 1 */
+}
+
+.audioPulse > div {
+  background-color: var(--Neutral-30, #cccccc); /* Added fallback color */
+  border-radius: 1000px;
+  width: 4px;
+  min-height: 4px;
+  transition: height 0.1s;
+}
+
+.audioPulse.hover > div {
+  animation: audioPulseHover 1.4s infinite alternate ease-in-out;
+}
+
+.audioPulse.active {
+  opacity: 1;
+}
+
+.audioPulse.active > div {
+  background-color: var(--Neutral-80, #333333); /* Added fallback color */
+}
+
+@keyframes audioPulseHover {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-3.5px);
+  }
+}
+
+/* The 'pulse' keyframe from SCSS seems unused by the .audioPulse class itself, 
+   but keeping it in case it was intended for something else or future use.
+   If it's truly unused, it can be removed.
+   The AudioPulse.tsx component itself doesn't apply a 'pulse' class.
+*/
+@keyframes audioPulsePulse { /* Renamed to avoid conflict with global pulse */
+  from {
+    transform: scale(1); /* Changed from 'scale: 1 1' to valid CSS */
+  }
+  to {
+    transform: scale(1.2); /* Changed from 'scale: 1.2 1.2' to valid CSS */
+  }
+}

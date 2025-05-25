@@ -1,0 +1,42 @@
+.topic-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 32px;
+  padding: 6px 14px;
+  background: var(--Neutral-10);
+  border: 1px solid var(--Neutral-30);
+  color: var(--Neutral-80);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 13px;
+  font-family: "Space Mono", monospace;
+  box-sizing: border-box;
+
+  &:hover {
+    background: var(--Neutral-20);
+    border-color: var(--Neutral-40);
+    color: var(--Neutral-90);
+  }
+
+  &:active {
+    background: var(--Neutral-00);
+    border-color: var(--Neutral-10);
+    color: var(--Neutral-90);
+  }
+
+  &.selected {
+    background: var(--Neutral-30);
+    border-color: var(--Neutral-70);
+    color: var(--Neutral-90);
+  }
+
+  .emoji {
+    font-size: 1.1em;
+  }
+
+  .label {
+    font-weight: normal;
+  }
+} 

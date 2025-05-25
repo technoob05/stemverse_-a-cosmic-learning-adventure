@@ -1,0 +1,191 @@
+/* Video to Learning App styles for StemVerse integration */
+
+/* Import basic fonts and styles */
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Titan+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Google+Symbols');
+@import url('https://cdn.jsdelivr.net/npm/react-tabs@6.1.0/style/react-tabs.min.css');
+
+/* Custom variables for the component */
+.video-learning-page-container {
+  --font-display: 'Titan One', sans-serif;
+  --font-primary: 'Google Sans Flex', sans-serif;
+  --font-secondary: 'Google Sans', sans-serif;
+  --font-technical: 'Google Sans Code', sans-serif;
+  --font-symbols: 'Google Symbols', sans-serif;
+  
+  --color-accent: #4285f4;
+  --color-error: #f53311;
+  
+  --color-headline: light-dark(#000, #fff);
+  --color-subtitle: light-dark(#666, #c8c8c8);
+  --color-attribution: light-dark(#999, #e1e1e1);
+  
+  --color-video-container-background: light-dark(#f0f0f0, #1a1a1a);
+  --color-video-placeholder-text: light-dark(#787878, #a0a0a0);
+  
+  --color-content-placeholder-border: light-dark(#ccc, #444);
+  --color-content-placeholder-text: light-dark(#787878, #a0a0a0);
+  
+  font-family: var(--font-primary);
+}
+
+/* Button styles */
+.video-learning-page-container button {
+  border: 2px solid;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s, opacity 0.2s;
+}
+
+.video-learning-page-container button:focus {
+  outline-color: var(--color-accent);
+}
+
+.video-learning-page-container button:disabled {
+  cursor: not-allowed;
+}
+
+.video-learning-page-container .button-primary {
+  --color-background: light-dark(#f0f0f0, #d4d4d4);
+  --color-background-active: light-dark(#fff, #fdfdfd);
+  --color-background-disabled: light-dark(#fcfcfc, #505053);
+
+  --color-border: light-dark(#9ba0a6, #e7e7e7);
+  --color-border-active: light-dark(#0c0c0c, #fff);
+  --color-border-disabled: light-dark(#ebeced, #47474a);
+
+  --color-text: light-dark(#000, #242428);
+  --color-text-active: light-dark(#000, #242428);
+  --color-text-disabled: light-dark(#ccc, #000);
+
+  background-color: var(--color-background);
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+.video-learning-page-container .button-primary:hover,
+.video-learning-page-container .button-primary:active {
+  background-color: var(--color-background-active);
+  border-color: var(--color-border-active);
+  color: var(--color-text-active);
+}
+
+.video-learning-page-container .button-primary:disabled {
+  background-color: var(--color-background-disabled);
+  border-color: var(--color-border-disabled);
+  color: var(--color-text-disabled);
+}
+
+.video-learning-page-container .button-secondary {
+  --color-background: transparent;
+  --color-background-active: transparent;
+  --color-background-disabled: light-dark(#ebeced, transparent);
+
+  --color-border: light-dark(#9ba0a6, #c1c1c1);
+  --color-border-active: light-dark(#0c0c0c, #fff);
+  --color-border-disabled: light-dark(#ebeced, #47474a);
+
+  --color-text-active: var(--color-text);
+  --color-text-disabled: light-dark(#bcbdbe, #505053);
+
+  background-color: var(--color-background);
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+.video-learning-page-container .button-secondary:hover,
+.video-learning-page-container .button-secondary:active {
+  background-color: var(--color-background-active);
+  border-color: var(--color-border-active);
+  color: var(--color-text-active);
+}
+
+.video-learning-page-container .button-secondary:disabled {
+  background-color: var(--color-background-disabled);
+  border-color: var(--color-border-disabled);
+  color: var(--color-text-disabled);
+}
+
+/* Input styles */
+.video-learning-page-container input {
+  --color-background: light-dark(transparent, #313131);
+  --color-background-disabled: transparent;
+
+  --color-border: light-dark(#ccc, #e5e5e5);
+  --color-border-disabled: light-dark(#ccc, #5e5e5e);
+
+  --color-text-disabled: light-dark(#dcdcdc, #464649);
+
+  background-color: var(--color-background);
+  border: 1px solid;
+  border-color: var(--color-border);
+  color: var(--color-text);
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s, opacity 0.2s;
+}
+
+.video-learning-page-container input:disabled {
+  background-color: var(--color-background-disabled);
+  border-color: var(--color-border-disabled);
+  color: var(--color-text-disabled);
+  cursor: not-allowed;
+}
+
+.video-learning-page-container input::placeholder {
+  opacity: 0.5;
+}
+
+.video-learning-page-container input:focus::placeholder {
+  opacity: 0;
+}
+
+/* Tab styles */
+.video-learning-page-container .selected-tab {
+  background: light-dark(#f0f0f0, #fff);
+  color: light-dark(#000, var(--color-background));
+  font-weight: bold;
+}
+
+.video-learning-page-container .react-tabs {
+  width: 100%;
+}
+
+.video-learning-page-container .react-tabs__tab-panel {
+  border-top: 1px solid light-dark(#000, #fff);
+}
+
+/* Loading spinner */
+.video-learning-page-container .loading-spinner {
+  animation: spin 1s ease-in-out infinite;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: var(--color-accent);
+  height: 60px;
+  width: 60px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Add responsive styles for the container */
+.video-learning-page-container .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .video-learning-page-container .page-header {
+    padding: 1rem 0;
+  }
+} 
