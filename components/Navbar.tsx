@@ -97,19 +97,18 @@ const Navbar: React.FC = () => {
   if (!gameCtx) return null;
 
   const { gameState, setActivePlanet } = gameCtx;
-  const { firstTimeUser } = gameState;
 
   const handleGoToHub = () => {
     setActivePlanet(null);
     setMobileMenuOpen(false);
   };
 
-  // Enhanced navbar classes with glassmorphism
+  // Enhanced navbar classes with glassmorphism - Navigation always visible
   const navbarClasses = `sticky top-0 z-50 w-full transition-all duration-500 ease-out ${
     scrolled 
       ? 'bg-gray-900/80 backdrop-blur-2xl shadow-2xl border-b border-white/10' 
       : 'bg-transparent'
-  } ${firstTimeUser ? 'pointer-events-none opacity-0' : 'pointer-events-auto opacity-100'}`;
+  } pointer-events-auto opacity-100`;
 
   return (
     <nav className={navbarClasses}>

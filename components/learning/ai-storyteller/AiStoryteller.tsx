@@ -6,11 +6,6 @@ import { marked } from 'marked';
 import styles from './AiStoryteller.module.css';
 
 // Add ImportMeta interface augmentation for Vite's env
-declare global {
-  interface ImportMeta {
-    env: Record<string, string>;
-  }
-}
 
 const AiStoryteller: React.FC = () => {
   const [userInput, setUserInput] = useState<string>('');
@@ -20,10 +15,13 @@ const AiStoryteller: React.FC = () => {
   const [error, setError] = useState<string>('');
 
   const additionalInstructions = `
-    Use a fun story about lots of tiny cats as a metaphor.
+    Use a cosmic adventure story with cute alien explorers and space creatures as metaphors.
+    Create an engaging narrative where concepts are explained through cosmic journeys, stellar phenomena, and adorable space beings.
     Keep sentences short but conversational, casual, and engaging.
-    Generate a cute, minimal illustration for each sentence with black ink on white background.
-    No commentary, just begin your explanation.
+    Generate stunning, colorful cosmic illustrations for each sentence with vibrant nebulas, sparkling stars, cute alien characters, and magical space environments.
+    Use a dreamy, fantastical art style with rich colors like deep purples, cosmic blues, golden starlight, and ethereal glows.
+    Make each illustration feel like a page from an enchanted space adventure book.
+    No commentary, just begin your cosmic explanation.
     Keep going until you're done.`;
 
   const parseError = (error: string) => {
@@ -132,9 +130,9 @@ const AiStoryteller: React.FC = () => {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <h1 className={styles.title}>AI Storyteller: Explain with Tiny Cats</h1>
+        <h1 className={styles.title}>AI Storyteller: Cosmic Learning Adventures</h1>
         <p className={styles.subtitle}>
-          Learn complex concepts through fun stories with adorable cat illustrations
+          Learn complex concepts through enchanting space stories with stunning cosmic illustrations
         </p>
       </div>
 
@@ -196,17 +194,17 @@ const AiStoryteller: React.FC = () => {
         {isGenerating && (
           <div className={styles.loading}>
             <div className={styles.spinner}></div>
-            <p>The tiny cats are working on your story...</p>
+            <p>Our cosmic explorers are crafting your space adventure...</p>
           </div>
         )}
 
         {slideshow.length > 0 && (
           <div className={styles.slideshowContainer}>
-            <h2>Your Cat-Explained Story</h2>
+            <h2>Your Cosmic Adventure Story</h2>
             <div className={styles.slideshow}>
               {slideshow.map((slide, index) => (
                 <div key={index} className={styles.slide}>
-                  <img src={slide.imgSrc} alt={`Illustration for slide ${index + 1}`} />
+                  <img src={slide.imgSrc} alt={`Cosmic illustration for slide ${index + 1}`} />
                   <div 
                     className={styles.caption}
                     dangerouslySetInnerHTML={{ __html: marked.parse(slide.text) }}
@@ -221,4 +219,4 @@ const AiStoryteller: React.FC = () => {
   );
 };
 
-export default AiStoryteller; 
+export default AiStoryteller;
