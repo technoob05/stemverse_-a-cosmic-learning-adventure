@@ -10,6 +10,14 @@ export enum Theme {
   DARK = 'dark',
   LIGHT = 'light',
   COSMIC_BLUE = 'cosmic-blue',
+  NEON_CYBERPUNK = 'neon-cyberpunk',
+  OCEAN_DEEP = 'ocean-deep',
+  SUNSET_FLAME = 'sunset-flame',
+  FOREST_MATRIX = 'forest-matrix',
+  ELECTRIC_STORM = 'electric-storm',
+  GALACTIC_GOLD = 'galactic-gold',
+  ARCTIC_AURORA = 'arctic-aurora',
+  ROYAL_PURPLE = 'royal-purple',
 }
 
 export interface Quest {

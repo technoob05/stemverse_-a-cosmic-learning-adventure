@@ -13,23 +13,16 @@ export default defineConfig(({ mode }) => {
           '@': path.resolve(__dirname, '.'),
         }
       },
-      server: {
-        host: true,
-        port: 3000,
-      },
-      preview: {
-        port: 3000,
-      },
       build: {
         rollupOptions: {
           output: {
             manualChunks: {
-              'react-vendor': ['react', 'react-dom'],
-              'router-vendor': ['react-router-dom'],
-              'animation-vendor': ['framer-motion'],
-            }
-          }
-        }
-      }
+              vendor: ['react', 'react-dom'],
+              router: ['react-router-dom'],
+              ui: ['framer-motion'],
+            },
+          },
+        },
+      },
     };
 });

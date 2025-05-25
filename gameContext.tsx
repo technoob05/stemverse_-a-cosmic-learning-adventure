@@ -24,7 +24,7 @@ const initialGameState: GameState = {
   totalTokens: 0,
   userName: 'Star Explorer',
   masterBadgeEarned: false,
-  firstTimeUser: false,
+  firstTimeUser: true,
   currentTheme: Theme.DARK, // Default theme
 };
 

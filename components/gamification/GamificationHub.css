@@ -1,0 +1,433 @@
+.gamification-hub {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Floating Gamification Button */
+.floating-gamification-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+}
+
+.passport-trigger-btn {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 2px solid var(--accent-secondary);
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: visible;
+}
+
+.passport-trigger-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.btn-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.passport-icon {
+  font-size: 1.8rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.progress-ring-mini {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.ring-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.progress-circle {
+  transition: stroke-dasharray 0.5s ease;
+  filter: drop-shadow(0 0 2px currentColor);
+}
+
+.achievement-count {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+/* New Achievement Indicator */
+.new-achievement-indicator {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 24px;
+  height: 24px;
+  background: #ff4444;
+  border: 2px solid var(--bg-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: white;
+  font-size: 0.8rem;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Quick Stats Overlay */
+.quick-stats-overlay {
+  position: fixed;
+  bottom: 120px;
+  right: 30px;
+  z-index: 998;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateX(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.stat-icon {
+  font-size: 1rem;
+}
+
+.stat-value {
+  color: var(--accent-primary);
+  font-weight: bold;
+}
+
+/* Achievement Particles */
+.achievement-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.achievement-particles .particle {
+  position: absolute;
+  font-size: 1.5rem;
+  pointer-events: none;
+  z-index: 10000;
+}
+
+/* Level Up Effects */
+.level-up-effect {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10001;
+  pointer-events: none;
+}
+
+.level-up-text {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--accent-primary);
+  text-shadow: 0 0 20px var(--accent-primary);
+  animation: levelUpAnimation 2s ease-out;
+}
+
+@keyframes levelUpAnimation {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+/* Achievement Progress Bar */
+.global-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--bg-tertiary);
+  z-index: 997;
+}
+
+.global-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+  transition: width 1s ease;
+  position: relative;
+}
+
+.global-progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5));
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(20px);
+  }
+}
+
+/* Streak Indicator */
+.streak-indicator {
+  position: fixed;
+  bottom: 220px;
+  right: 30px;
+  z-index: 998;
+  padding: 8px 12px;
+  background: linear-gradient(135deg, #ff6b35, #ff8e53);
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  font-size: 0.8rem;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+  animation: streakPulse 2s ease-in-out infinite;
+}
+
+@keyframes streakPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Daily Challenge Indicator */
+.daily-challenge-indicator {
+  position: fixed;
+  bottom: 270px;
+  right: 30px;
+  z-index: 998;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--accent-tertiary), var(--accent-primary));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.daily-challenge-indicator:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .floating-gamification-btn {
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .passport-trigger-btn {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .passport-icon {
+    font-size: 1.5rem;
+  }
+  
+  .quick-stats-overlay {
+    bottom: 90px;
+    right: 20px;
+  }
+  
+  .stat-item {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+  
+  .streak-indicator,
+  .daily-challenge-indicator {
+    right: 20px;
+  }
+  
+  .streak-indicator {
+    bottom: 160px;
+  }
+  
+  .daily-challenge-indicator {
+    bottom: 200px;
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .quick-stats-overlay {
+    flex-direction: row;
+    bottom: 90px;
+    right: 90px;
+    left: 20px;
+    justify-content: space-between;
+  }
+  
+  .stat-item {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+/* Accessibility */
+.floating-gamification-btn:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+.passport-trigger-btn[aria-pressed="true"] {
+  transform: scale(0.95);
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .stat-item {
+    background: rgba(20, 20, 30, 0.9);
+  }
+  
+  .new-achievement-indicator {
+    border-color: var(--bg-primary);
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .passport-trigger-btn {
+    border-width: 3px;
+  }
+  
+  .stat-item {
+    border-width: 2px;
+  }
+  
+  .new-achievement-indicator {
+    border-width: 3px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .passport-icon,
+  .new-achievement-indicator,
+  .streak-indicator {
+    animation: none;
+  }
+  
+  .passport-trigger-btn:hover {
+    transform: none;
+  }
+  
+  .achievement-particles .particle {
+    animation: none;
+    opacity: 0;
+  }
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+/* Gamification Hub Container */
+.gamification-hub {
+  --achievement-primary: #ffd700;
+  --achievement-secondary: #ff6b35;
+  --achievement-success: #4caf50;
+  --achievement-rare: #9c27b0;
+  --achievement-epic: #3f51b5;
+  --achievement-legendary: #ff9800;
+}
+
+/* Theme-specific adjustments */
+.theme-cosmic-blue .floating-gamification-btn {
+  background: linear-gradient(135deg, #00d4ff, #0099cc);
+}
+
+.theme-neon-cyberpunk .floating-gamification-btn {
+  background: linear-gradient(135deg, #ff0080, #00ff80);
+  box-shadow: 0 0 20px #ff0080;
+}
+
+.theme-sunset-flame .floating-gamification-btn {
+  background: linear-gradient(135deg, #ff6b35, #ff9068);
+}
+
+.theme-forest-matrix .floating-gamification-btn {
+  background: linear-gradient(135deg, #4caf50, #81c784);
+}

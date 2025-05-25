@@ -1,0 +1,349 @@
+.achievement-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10000;
+  max-width: 400px;
+  width: 100%;
+  pointer-events: auto;
+}
+
+.toast-content {
+  background: var(--bg-primary);
+  border: 2px solid var(--accent-primary);
+  border-radius: 16px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.toast-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, var(--accent-primary)/10, var(--accent-secondary)/10);
+  z-index: -1;
+}
+
+.toast-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.toast-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  color: var(--accent-primary);
+  font-size: 1.1rem;
+}
+
+.celebration-icon {
+  font-size: 1.3rem;
+  animation: bounce 0.6s ease-in-out infinite alternate;
+}
+
+.close-toast-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 4px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-toast-btn:hover {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.achievement-details {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  position: relative;
+}
+
+.achievement-icon-large {
+  font-size: 3rem;
+  animation: glow 2s ease-in-out infinite;
+}
+
+.achievement-text {
+  flex: 1;
+}
+
+.achievement-name {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--text-primary);
+  margin: 0 0 8px 0;
+}
+
+.achievement-description {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin: 0 0 12px 0;
+  line-height: 1.4;
+}
+
+.achievement-rewards {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.reward-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+}
+
+.reward-icon {
+  font-size: 1rem;
+}
+
+.reward-text {
+  color: var(--accent-secondary);
+  font-weight: 500;
+}
+
+.rarity-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  padding: 4px 8px;
+  border: 2px solid;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  background: var(--bg-primary);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.rarity-badge[data-rarity="common"] {
+  color: var(--accent-tertiary);
+  border-color: var(--accent-tertiary);
+}
+
+.rarity-badge[data-rarity="rare"] {
+  color: var(--accent-secondary);
+  border-color: var(--accent-secondary);
+}
+
+.rarity-badge[data-rarity="epic"] {
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+.rarity-badge[data-rarity="legendary"] {
+  color: #FFD700;
+  border-color: #FFD700;
+  box-shadow: 0 0 15px #FFD700/50;
+}
+
+/* Particle effects for legendary achievements */
+.particle-effects {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.particle {
+  position: absolute;
+  font-size: 1.2rem;
+  pointer-events: none;
+}
+
+/* Animations */
+@keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px currentColor);
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 20px currentColor);
+    transform: scale(1.05);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .achievement-toast {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    max-width: none;
+  }
+  
+  .toast-content {
+    padding: 16px;
+  }
+  
+  .achievement-details {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+  }
+  
+  .achievement-icon-large {
+    font-size: 2.5rem;
+  }
+  
+  .rarity-badge {
+    position: static;
+    margin-top: 8px;
+  }
+}
+
+/* Toast container for multiple toasts */
+.achievement-toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .achievement-toast-container {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+  }
+}
+
+/* Achievement unlock sound effect indicator */
+.sound-wave {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--accent-primary);
+  border-radius: 50%;
+  animation: soundWave 1s ease-out infinite;
+  opacity: 0;
+}
+
+@keyframes soundWave {
+  0% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* Special effects for different rarities */
+.toast-content.legendary {
+  animation: legendaryGlow 3s ease-in-out infinite;
+  border-color: #FFD700;
+}
+
+.toast-content.epic {
+  animation: epicShimmer 2s ease-in-out infinite;
+}
+
+.toast-content.rare {
+  animation: rareFlicker 1.5s ease-in-out infinite;
+}
+
+@keyframes legendaryGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px #FFD700/50;
+  }
+  50% {
+    box-shadow: 0 0 40px #FFD700/80, 0 0 60px #FFD700/40;
+  }
+}
+
+@keyframes epicShimmer {
+  0%, 100% {
+    box-shadow: 0 0 15px var(--accent-primary)/50;
+  }
+  50% {
+    box-shadow: 0 0 25px var(--accent-primary)/70;
+  }
+}
+
+@keyframes rareFlicker {
+  0%, 100% {
+    box-shadow: 0 0 10px var(--accent-secondary)/40;
+  }
+  50% {
+    box-shadow: 0 0 20px var(--accent-secondary)/60;
+  }
+}
+
+/* Achievement category icons */
+.achievement-category-icon {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  font-size: 1rem;
+  opacity: 0.6;
+}
+
+/* Progress celebration for achievements with requirements */
+.progress-celebration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+  animation: progressFill 2s ease-out;
+}
+
+@keyframes progressFill {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
